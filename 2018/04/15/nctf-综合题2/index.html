@@ -106,12 +106,12 @@
 <meta property="og:site_name" content="Ph3mf0lk">
 <meta property="og:description" content="【综合题2】（[http://cms.nuptzj.cn/) 进入题目，发现是个留言板。下面有留言框，于是试试xss，结果写完xss语句点击预览时，根据提示，这题不是xss的题目。因为题目说是个综合题，肯定要后台getshell的，然后getshell的方法最容易想到的就是sql得到后台账号密码，然后用一句话木马加菜刀。于是接下来开始对这个网站收集信息。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="file:///D:/我的文档/Tencent%20Files/709669665/Image/C2C/Image2/NNY4IAWO%7BQRVB@U8AJACGQY.png">
-<meta property="og:updated_time" content="2018-04-15T15:00:40.158Z">
+<meta property="og:image" content="http://yoursite.com/2018/04/15/nctf-综合题2/NNY4IAWO%7BQRVB@U8AJACGQY.png">
+<meta property="og:updated_time" content="2018-04-15T15:09:14.568Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nctf-综合题2 wp">
 <meta name="twitter:description" content="【综合题2】（[http://cms.nuptzj.cn/) 进入题目，发现是个留言板。下面有留言框，于是试试xss，结果写完xss语句点击预览时，根据提示，这题不是xss的题目。因为题目说是个综合题，肯定要后台getshell的，然后getshell的方法最容易想到的就是sql得到后台账号密码，然后用一句话木马加菜刀。于是接下来开始对这个网站收集信息。">
-<meta name="twitter:image" content="file:///D:/我的文档/Tencent%20Files/709669665/Image/C2C/Image2/NNY4IAWO%7BQRVB@U8AJACGQY.png">
+<meta name="twitter:image" content="http://yoursite.com/2018/04/15/nctf-综合题2/NNY4IAWO%7BQRVB@U8AJACGQY.png">
 
 
 
@@ -402,7 +402,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;</span><br><span class="line">&lt;?php</span><br><span class="line">$file=$_GET[&apos;file&apos;];</span><br><span class="line">if($file==&quot;&quot; || strstr($file,&apos;config.php&apos;))&#123;</span><br><span class="line">echo &quot;file参数不能为空！&quot;;</span><br><span class="line">exit();</span><br><span class="line">&#125;else&#123;</span><br><span class="line">$cut=strchr($file,&quot;loginxlcteam&quot;);</span><br><span class="line">if($cut==false)&#123;</span><br><span class="line">$data=file_get_contents($file);</span><br><span class="line">$date=htmlspecialchars($data);</span><br><span class="line">echo $date;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">echo &quot;&lt;script&gt;alert(&apos;敏感目录，禁止查看！但是。。。&apos;)&lt;/script&gt;&quot;;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>于是知道有个叫loginxlcteam的文件，用包含读取不了，于是直接访问，得到了登陆界面。</p>
 <p>于是登陆进入后台。</p>
-<p><img src="file:///D:\我的文档\Tencent Files\709669665\Image\C2C\Image2\NNY4IAWO{QRVB@U8AJACGQY.png" alt="img"></p>
+<p><img src="/2018/04/15/nctf-综合题2/NNY4IAWO{QRVB@U8AJACGQY.png" alt="1"></p>
 <p>诶，这里都不用我们上传一句话木马了。由于不知道连接密码。后来才知道有个叫php回调后门</p>
 <p><a href="https://blog.csdn.net/settoken/article/details/50946689" target="_blank" rel="noopener">https://blog.csdn.net/settoken/article/details/50946689</a></p>
 <p>读取xlcteam.php得</p>
