@@ -125,7 +125,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/05/13/第四届全国网络空间安全技术大赛wp/17.png">
 <meta property="og:image" content="http://yoursite.com/2018/05/13/第四届全国网络空间安全技术大赛wp/18.png">
 <meta property="og:image" content="http://yoursite.com/2018/05/13/第四届全国网络空间安全技术大赛wp/19.png">
-<meta property="og:updated_time" content="2018-05-13T10:11:49.398Z">
+<meta property="og:updated_time" content="2018-05-13T10:37:37.294Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第四届全国网络空间安全技术大赛wp">
 <meta name="twitter:description" content="一、WEBwelcome签到题就不说了。 1.Web1进入题目，就提示我们login，然后跳转到登陆页面。看到有个注册，第一直觉让我随便来注册一个账号。然后用这个账号登陆。">
@@ -427,7 +427,10 @@
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> <span class="keyword">echo</span> <span class="string">"hello"</span> <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 <p>然后上传上去，得到一个以jpg文件结尾的路径.然后用index.php的文件包含这个文件。结果如下:</p>
 <p><img src="/2018/05/13/第四届全国网络空间安全技术大赛wp/10.png" alt="img"></p>
-<p>说明我们上传上去的txt文件输入在上传后变成了jpg文件，但是在index.php里被看作php文件来处理。所以echo出来hello。于是我们写入一个一句话木马.上传上去，同样的操作，然后用菜刀连接就可以getshell了.</p>
+<p>说明我们上传上去的txt文件输入在上传后变成了jpg文件，但是在index.php里被看作php文件来处理。所以echo出来hello。</p>
+<p>补上index.php的源码:(和fl4g.php加密方式一样)</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    error_reporting(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span>(!<span class="keyword">isset</span>($_GET[<span class="string">'file'</span>])||<span class="keyword">empty</span>($_GET[<span class="string">'file'</span>]))&#123;</span><br><span class="line">         header(<span class="string">'Refresh:1,url=index.php?file=login.html'</span>);</span><br><span class="line">         <span class="keyword">die</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    $file  = $_GET[<span class="string">'file'</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> ((strpos($file,<span class="string">':'</span>)!==<span class="keyword">false</span>))&#123;</span><br><span class="line">        header(<span class="string">'Refresh:1,url=index.php?file=login.html'</span>);</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"illgal filename!!"</span>;</span><br><span class="line">        <span class="keyword">die</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">include_once</span>($file);  </span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>于是我们写入一个一句话木马.上传上去，同样的操作，然后用菜刀连接就可以getshell了.</p>
 <p><img src="/2018/05/13/第四届全国网络空间安全技术大赛wp/11.png" alt="img"></p>
 <p>看到了fl4g.php,原来以为就这样结束了，结果打开是乱码，下载下来还是乱码。</p>
 <p><img src="/2018/05/13/第四届全国网络空间安全技术大赛wp/12.png" alt="img"></p>
