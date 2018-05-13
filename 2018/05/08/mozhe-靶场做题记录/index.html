@@ -117,7 +117,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/05/08/mozhe-靶场做题记录/6.png">
 <meta property="og:image" content="http://yoursite.com/2018/05/08/mozhe-靶场做题记录/4.png">
 <meta property="og:image" content="http://yoursite.com/2018/05/08/mozhe-靶场做题记录/5.png">
-<meta property="og:updated_time" content="2018-05-09T13:53:27.835Z">
+<meta property="og:updated_time" content="2018-05-13T14:05:03.735Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mozhe 靶场做题记录">
 <meta name="twitter:description" content="最近发现了一个不错的靶场，那个是最近出来的。里面的漏洞靶场对我来说可以涨挺多知识的。而且可能刚开始，里面的靶场很多都是免费的。做的听舒服的。也推荐一一下下：（https://www.mozhe.cn/）">
@@ -450,12 +450,13 @@
 <p>这题让我又学会了一种sqlmap的用法.</p>
 <p>进入题目，是一个登陆框。我们先用admin，admin登陆，然后发现</p>
 <p><img src="/2018/05/08/mozhe-靶场做题记录/3.png" alt="img"></p>
-<p>发现这里记录了我电脑的ip。那么就可以想到这里的注入点是XFF。看了一篇关于http头注入的文章。然后用burp抓包，添加一个XFF，在ip后加个“<em>”号，作用是sqlmqp会自动查找注入点，插入“</em>”可引导sqlmap。然后把请求copy下来保存为一个txt文件</p>
+<p>发现这里记录了我电脑的ip。那么就可以想到这里的注入点是XFF。看了一篇关于http头注入的文章。然后用burp抓包，添加一个XFF，在ip后加个“<em> ”号，作用是sqlmqp会自动查找注入点，插入“</em>”可引导sqlmap。然后把请求copy下来保存为一个txt文件</p>
 <p><img src="/2018/05/08/mozhe-靶场做题记录/6.png" alt="img"></p>
 <p><img src="/2018/05/08/mozhe-靶场做题记录/4.png" alt="img"></p>
 <p>然后就开启我们的神器sqlmap，输入命令sqlmap.py -r “C:\Users\XXX\Desktop\request.txt” -p “X-Forwarded-For” –dbs 就可以爆库。</p>
 <p><img src="/2018/05/08/mozhe-靶场做题记录/5.png" alt="img"></p>
 <p>然后以此类推就可以爆出表名，字段，数据了。进而就可以知道账号密码了.</p>
+<p>持续更新ing……</p>
 
       
     </div>
